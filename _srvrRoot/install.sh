@@ -84,23 +84,23 @@ mkdir /var/cache/nginx/
 chown www-data:www-data -R /var/cache/nginx/
 
 mkdir /var/www/
-mkdir /var/www/madmap.com
+mkdir /var/www/simplest.srv
 
-mkdir /var/www/madmap.com/_srvrRoot
-mkdir /var/www/madmap.com/_srvrRoot/tmp
-mkdir /var/www/madmap.com/_srvrRoot/etc
-mkdir /var/www/madmap.com/_srvrRoot/etc/apt
-mkdir /var/www/madmap.com/_srvrRoot/etc/network
-mkdir /var/www/madmap.com/_srvrRoot/etc/nginx
-mkdir /var/www/madmap.com/_srvrRoot/etc/nginx/sites-available
-mkdir /var/www/madmap.com/_srvrRoot/home
-mkdir /var/www/madmap.com/_srvrRoot/var
-mkdir /var/www/madmap.com/_srvrRoot/var/log
-mkdir /var/www/madmap.com/_srvrRoot/var/log/nginx
-mkdir /var/www/madmap.com/_srvrRoot/var/log/mongodb
-mkdir /var/www/madmap.com/_srvrRoot/var/log/mysql
-mkdir /var/www/madmap.com/_srvrRoot/download
-mkdir /var/www/madmap.com/_tomcat
+mkdir /var/www/simplest.srv/_srvrRoot
+mkdir /var/www/simplest.srv/_srvrRoot/tmp
+mkdir /var/www/simplest.srv/_srvrRoot/etc
+mkdir /var/www/simplest.srv/_srvrRoot/etc/apt
+mkdir /var/www/simplest.srv/_srvrRoot/etc/network
+mkdir /var/www/simplest.srv/_srvrRoot/etc/nginx
+mkdir /var/www/simplest.srv/_srvrRoot/etc/nginx/sites-available
+mkdir /var/www/simplest.srv/_srvrRoot/home
+mkdir /var/www/simplest.srv/_srvrRoot/var
+mkdir /var/www/simplest.srv/_srvrRoot/var/log
+mkdir /var/www/simplest.srv/_srvrRoot/var/log/nginx
+mkdir /var/www/simplest.srv/_srvrRoot/var/log/mongodb
+mkdir /var/www/simplest.srv/_srvrRoot/var/log/mysql
+mkdir /var/www/simplest.srv/_srvrRoot/download
+mkdir /var/www/simplest.srv/_tomcat
 
 chmod -R a-rwx,u+rwX,g+rwX /var/www && chown www-data:www-data -R /var/www
 
@@ -113,20 +113,20 @@ rm -rf /etc/nginx/sites-enabled
 # Upgrading /etc/nginx/ with config files links.                                                                       #
 ########################################################################################################################
 
-ln -s /var/www/madmap.com/_srvrRoot/etc/nginx/sites-available/madmap.conf /etc/nginx/sites-available/madmap.conf
-ln -s /var/www/madmap.com/_srvrRoot/etc/nginx/nginx.conf /etc/nginx/nginx.conf
+ln -s /var/www/simplest.srv/_srvrRoot/etc/nginx/sites-available/madmap.conf /etc/nginx/sites-available/madmap.conf
+ln -s /var/www/simplest.srv/_srvrRoot/etc/nginx/nginx.conf /etc/nginx/nginx.conf
 
 ########################################################################################################################
 # Upgrading _srvrRoot with data access links.                                                                          #
 ########################################################################################################################
 
-ln /var/log/nginx/access.log /var/www/madmap.com/_srvrRoot/var/log/nginx/access.log
-ln /var/log/nginx/error.log /var/www/madmap.com/_srvrRoot/var/log/nginx/error.log
-ln /var/log/nginx/madmap.log /var/www/madmap.com/_srvrRoot/var/log/nginx/madmap.log
-ln /var/log/nginx/madmap.err /var/www/madmap.com/_srvrRoot/var/log/nginx/madmap.err
-ln /var/log/mongodb/mongodb.log /var/www/madmap.com/_srvrRoot/var/log/mongodb/mongodb.log
-ln /var/log/mysql/error.log /var/www/madmap.com/_srvrRoot/var/log/mysql/error.log
-ln /var/log/memcached.log /var/www/madmap.com/_srvrRoot/var/log/memcached.log
+ln /var/log/nginx/access.log /var/www/simplest.srv/_srvrRoot/var/log/nginx/access.log
+ln /var/log/nginx/error.log /var/www/simplest.srv/_srvrRoot/var/log/nginx/error.log
+ln /var/log/nginx/madmap.log /var/www/simplest.srv/_srvrRoot/var/log/nginx/madmap.log
+ln /var/log/nginx/madmap.err /var/www/simplest.srv/_srvrRoot/var/log/nginx/madmap.err
+ln /var/log/mongodb/mongodb.log /var/www/simplest.srv/_srvrRoot/var/log/mongodb/mongodb.log
+ln /var/log/mysql/error.log /var/www/simplest.srv/_srvrRoot/var/log/mysql/error.log
+ln /var/log/memcached.log /var/www/simplest.srv/_srvrRoot/var/log/memcached.log
 
 ########################################################################################################################
 # For production mode without ftp access we need to change permissions:                                                #
@@ -199,13 +199,13 @@ apt-get install openjdk-7-jdk
 # Important! Unpack this archive with user (not root) privileges.                                                      #
 ########################################################################################################################
 
-tar -zxvf /var/www/madmap.com/_srvrRoot/download/apache-tomcat-8.0.9.tar.gz -C /var/www/madmap.com/_tomcat
+tar -zxvf /var/www/simplest.srv/_srvrRoot/download/apache-tomcat-8.0.9.tar.gz -C /var/www/simplest.srv/_tomcat
 
 ########################################################################################################################
-# Edit /var/www/madmap.com/_tomcat/apache-tomcat-8.0.9/bin/setclasspath.sh - add first line:                           #
+# Edit /var/www/simplest.srv/_tomcat/apache-tomcat-8.0.9/bin/setclasspath.sh - add first line:                           #
 # JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386                                                                           #
 #                                                                                                                      #
-# Edit /var/www/madmap.com/tomcat/apache-tomcat-8.0.9/conf/tomcat-users.xml. Add following lines above the last line:  #
+# Edit /var/www/simplest.srv/tomcat/apache-tomcat-8.0.9/conf/tomcat-users.xml. Add following lines above the last line:  #
 # <role rolename="manager-gui"/>                                                                                       #
 # <user username="tomcat" password="tomcat" roles="manager-gui"/>                                                      #
 ########################################################################################################################

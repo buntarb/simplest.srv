@@ -12,10 +12,10 @@
   sudo service nginx stop
 
 # Start tomcat cmd:
-  /var/www/madmap.com/_tomcat/apache-tomcat-8.0.14/bin/startup.sh
+  /var/www/simplest.srv/_tomcat/apache-tomcat-8.0.9/bin/startup.sh
 
 # Stop tomcat cmd:
-  /var/www/madmap.com/_tomcat/apache-tomcat-8.0.14/bin/shutdown.sh
+  /var/www/simplest.srv/_tomcat/apache-tomcat-8.0.9/bin/shutdown.sh
 
 # Start MongoDb cmd:
   sudo service mongodb start
