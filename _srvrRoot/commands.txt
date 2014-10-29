@@ -1,0 +1,45 @@
+########################################################################################################################
+# SERVER SHELL COMMANDS                                                                                                #
+########################################################################################################################
+
+# Start nginx cmd:
+  sudo service nginx start
+
+# Restart nginx cmd:
+  sudo service nginx restart
+
+# Stop nginx cmd:
+  sudo service nginx stop
+
+# Start tomcat cmd:
+  /var/www/madmap.com/_tomcat/apache-tomcat-8.0.14/bin/startup.sh
+
+# Stop tomcat cmd:
+  /var/www/madmap.com/_tomcat/apache-tomcat-8.0.14/bin/shutdown.sh
+
+# Start MongoDb cmd:
+  sudo service mongodb start
+
+# Stop MongoDb cmd:
+  sudo service mongodb stop
+
+########################################################################################################################
+# GIT SHELL COMMANDS                                                                                                   #
+########################################################################################################################
+
+# Show all local project changes:
+  git status
+
+# Add new files or folders to rep:
+  git add path/to/new/file
+
+# Commit all local changes:
+  git commit -a -m 'Type comment here'
+
+# Get all changes from server rep:
+  git pull
+
+# Push your local changes to server:
+  git push
+
+########################################################################################################################
