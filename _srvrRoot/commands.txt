@@ -37,7 +37,7 @@
   git commit -a -m 'Type comment here'
 
 # Get all changes from server rep:
-  git pull
+  git pull origin master
 
 # Push your local changes to server:
   git push
